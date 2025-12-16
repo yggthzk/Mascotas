@@ -9,7 +9,7 @@ class Mascota(models.Model):
     tipo = models.CharField(max_length=10, choices=TIPO_CHOICES)
     descripcion = models.TextField()
     zona = models.CharField(max_length=100)
-    fecha_reporte = models.DateTimeField(auto_now_add=True)
+    fecha_reporte = models.DateTimeField(auto_now_add=True) #campos delformulario de creacion
 
     def __str__(self):
         return f"{self.nombre} ({self.tipo})"

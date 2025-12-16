@@ -1,4 +1,4 @@
-2025-12-16 08:07:22,220 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+Z2025-12-16 08:07:22,220 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
 2025-12-16 08:07:27,781 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
 2025-12-16 08:07:29,697 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
 2025-12-16 08:07:36,646 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
@@ -108,3 +108,66 @@
 2025-12-16 11:16:35,760 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
 2025-12-16 11:16:41,510 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
 2025-12-16 11:19:32,955 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:32:53,438 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:00,425 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:03,302 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:07,280 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:12,151 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:14,920 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:17,781 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:25,730 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 11:33:28,574 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 12:23:45,132 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: rusia
+2025-12-16 12:23:45,140 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: rusia
+2025-12-16 12:24:00,744 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: Windows 10 microsoft
+2025-12-16 12:24:00,750 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: Windows 10 microsoft
+2025-12-16 12:24:25,668 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: Cicatriz
+2025-12-16 12:24:25,674 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: Cicatriz
+2025-12-16 12:24:37,875 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: mancha
+2025-12-16 12:24:37,880 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: mancha
+2025-12-16 12:24:49,537 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: se�a
+2025-12-16 12:24:49,540 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: se�a
+2025-12-16 12:25:01,843 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: negro cojea
+2025-12-16 12:25:01,848 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: negro cojea
+2025-12-16 12:25:08,710 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: negro cicatriz
+2025-12-16 12:25:08,716 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: negro cicatriz
+2025-12-16 12:25:11,595 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: negro
+2025-12-16 12:25:11,601 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: negro
+2025-12-16 12:25:20,336 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: ojos distintos
+2025-12-16 12:25:20,343 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: ojos distintos
+2025-12-16 12:25:22,816 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: ojos distinto
+2025-12-16 12:25:22,822 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: ojos distinto
+2025-12-16 12:25:27,518 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: ojos distinto
+2025-12-16 12:25:27,524 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: ojos distinto
+2025-12-16 12:25:31,659 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: ojo color
+2025-12-16 12:25:31,664 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: ojo color
+2025-12-16 12:25:36,040 - [AUDITORIA] Usuario: SISTEMA - Accion: Ejecutando IA para: ojo
+2025-12-16 12:25:36,045 - [AUDITORIA] Usuario: Administrador - Accion: Busqueda IA: ojo
+2025-12-16 12:25:49,455 - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-12-16 12:28:05,306 - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-12-16 13:17:23,579 - [AUDITORIA] Usuario: Administrador - Accion: Elimino mascota Daisy
+2025-12-16 13:17:25,889 - [AUDITORIA] Usuario: Administrador - Accion: Edito mascota Zeus
+2025-12-16 13:18:58,207 - [AUDITORIA] Usuario: Administrador - Accion: Creo mascota francisco trvival
+2025-12-16 13:19:46,436 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:19:49,299 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:19:56,140 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:19:59,189 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:20:02,067 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:20:08,940 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:20:11,788 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:20:14,643 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:20:19,617 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\services.py changed, reloading.
+2025-12-16 13:20:22,590 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\models.py changed, reloading.
+2025-12-16 13:20:25,359 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\models.py changed, reloading.
+2025-12-16 13:20:29,320 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\models.py changed, reloading.
+2025-12-16 13:20:39,230 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:20:42,106 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:20:45,911 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:20:50,879 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:20:54,793 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:21:04,825 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:21:07,773 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:21:11,698 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:21:15,512 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:21:20,241 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.
+2025-12-16 13:21:28,181 - C:\Users\bgrey\OneDrive\Escritorio\mascotas\Mascotas\proyecto_mascotas\core\views.py changed, reloading.

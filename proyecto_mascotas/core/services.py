@@ -13,7 +13,7 @@ class SistemaLog:
             cls._instancia = super(SistemaLog, cls).__new__(cls)
         return cls._instancia
     def registrar_evento(self, usuario, accion):
-        mensaje = f"[AUDITORIA] Usuario: {usuario} - Accion: {accion}"
+        mensaje = f"[AUDITORIA] Usuario: {usuario} - Accion: {accion}" #Auditoria de la aplicacion
         logging.info(mensaje)
         print(mensaje) 
 
@@ -30,7 +30,7 @@ class BusquedaIADifusa(EstrategiaBusqueda):
             secuencia = difflib.SequenceMatcher(None, mascota.descripcion.lower(), query.lower())
             ratio = secuencia.ratio()
             if ratio > 0.4 or query.lower() in mascota.descripcion.lower():
-                resultados.append(mascota)
+                resultados.append(mascota)#me dae erroorrr
         return resultados
 
 class FabricaMascotas:
@@ -59,11 +59,11 @@ class ChatbotIA:
     def responder(mensaje_usuario):
         try:
             genai.configure(api_key=ChatbotIA.API_KEY)
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-1.5-flash') #gemini 2.5 no acepta y pide pago. queda en satndby 2 minutos al ser gratiss
             
             contexto_datos = ChatbotIA.obtener_contexto_db(mensaje_usuario)
-            
-            prompt_sistema = f"""
+            #prompt de comportammiento de l api de la IA de GEMINI
+            prompt_sistema = f""" 
             Actua como el asistente virtual experto y empatico de la app Bienestar App.
             Tu mision es ayudar a encontrar mascotas perdidas y promover la adopcion.
             
@@ -100,7 +100,7 @@ class ChatbotIA:
                 es_valido = True
                 break
         
-        if es_valido:
+        if es_valido:#manejo de errores
             return "Para ver informacion detallada de las mascotas o reportar una extraviada por favor utiliza las opciones del menu principal de la aplicacion."
         else:
             return "Lo siento, no puedo ayudarte con ese tema. Solo respondo preguntas relacionadas con mascotas, animales y el funcionamiento de la app."
