@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4 text-primary">Mascotas Reportadas</h2>
+<a href="{% url 'crear_mascota' %}" class="btn btn-success mb-3 shadow">+ Reportar Mascota</a>
+
+<div class="card">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr><th>Nombre</th><th>Tipo</th><th>Zona</th><th>Acciones</th></tr>
+            </thead>
+            <tbody>
+                {% for m in mascotas %}
+                <tr>
+                    <td>{{ m.nombre }}</td>
+                    <td>{{ m.tipo }}</td>
+                    <td>{{ m.zona }}</td>
+                    <td>
+                        <a href="{% url 'editar_mascota' m.id %}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{% url 'eliminar_mascota' m.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4" class="text-center py-4">No hay mascotas registradas</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

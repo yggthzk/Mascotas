@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-md-6 col-lg-5">
+        
+        <div class="text-center mb-4">
+            <h1 class="display-4 fw-bold text-primary">BIENESTAR APP</h1>
+            <p class="text-muted">Sistema de Gestion y Seguridad</p>
+        </div>
+
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-body p-5">
+                <h3 class="text-center mb-4">Iniciar Sesion</h3>
+                
+                {% if form.errors %}
+                    <div class="alert alert-danger text-center">
+                        Usuario o contraseña incorrectos
+                    </div>
+                {% endif %}
+
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Usuario</label>
+                        <input type="text" name="username" class="form-control form-control-lg" placeholder="Ingrese su usuario" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Contraseña</label>
+                        <input type="password" name="password" class="form-control form-control-lg" placeholder="********" required>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg fw-bold">INGRESAR</button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-4 border-top pt-3">
+                    <p class="text-muted mb-1">¿Olvidaste tu contraseña?</p>
+                    <a href="#" class="text-decoration-none fw-bold" onclick="alert('Por favor contacte al administrador del sistema para restablecer sus credenciales.\n\nCorreo: admin@admin.xd')">
+                        Contacte al administrador
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

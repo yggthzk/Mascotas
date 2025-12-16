@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card p-4">
+            <h2 class="text-primary mb-4">{% if mascota %}Editar{% else %}Reportar{% endif %} Mascota</h2>
+            
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Tipo de Mascota</label>
+                    <select name="tipo" class="form-select" {% if mascota %}disabled{% endif %}>
+                        <option value="Perro" {% if mascota.tipo == "Perro" %}selected{% endif %}>Perro</option>
+                        <option value="Gato" {% if mascota.tipo == "Gato" %}selected{% endif %}>Gato</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" value="{{ mascota.nombre|default:'' }}" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Descripcion Detallada</label>
+                    <textarea name="descripcion" class="form-control" rows="3" placeholder="Ej: Manchas negras, collar rojo... (Minimo 10 caracteres)" required>{{ mascota.descripcion|default:'' }}</textarea>
+                    <small class="text-muted">La IA usara este campo para encontrar coincidencias.</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Zona / Ubicacion</label>
+                    <input type="text" name="zona" class="form-control" value="{{ mascota.zona|default:'' }}" required>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">Guardar Registro</button>
+                    <a href="{% url 'lista_mascotas' %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
