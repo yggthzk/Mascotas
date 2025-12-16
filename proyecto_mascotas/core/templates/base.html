@@ -6,7 +6,81 @@
     <style>
         body { background-color: #f8f9fa; }
         .navbar { box-shadow: 0 2px 4px rgba(0,0,0,.05); }
-        .card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,.1); }
+        
+        #chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
+            color: white;
+            border: none;
+            box-shadow: 0 6px 15px rgba(255, 69, 0, 0.4);
+            font-size: 40px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #chat-btn:hover { transform: scale(1.1); }
+        
+        #chat-window {
+            position: fixed;
+            bottom: 120px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .chat-input-area {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .msg {
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 85%;
+            font-size: 0.95em;
+        }
+        
+        .msg-bot { background-color: #f1f3f5; color: #333; align-self: flex-start; }
+        .msg-user { background-color: #ff4500; color: white; align-self: flex-end; }
     </style>
 </head>
 <body>
@@ -14,14 +88,14 @@
     {% if user.is_authenticated %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div class="container">
-            <span class="navbar-brand fw-bold">BIENESTAR APP</span>
-            <div class="d-flex gap-2">
-                <a href="{% url 'lista_mascotas' %}" class="btn btn-light text-primary fw-bold">Inicio</a>
-                <a href="{% url 'buscar_mascota' %}" class="btn btn-outline-light">IA Busqueda</a>
-                <form action="{% url 'logout' %}" method="post" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Cerrar Sesion</button>
+            <a class="navbar-brand fw-bold" href="{% url 'lista_mascotas' %}">BIENESTAR APP</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link active" href="{% url 'lista_mascotas' %}">Inicio</a></li></ul>
+                <form class="d-flex me-3" action="{% url 'buscar_mascota' %}" method="get">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Buscar..." required>
+                    <button class="btn btn-light" type="submit">🔍</button>
                 </form>
+                <form action="{% url 'logout' %}" method="post">{% csrf_token %}<button class="btn btn-danger btn-sm">Salir</button></form>
             </div>
         </div>
     </nav>
@@ -33,9 +107,48 @@
                 <div class="alert alert-{{ message.tags }}">{{ message }}</div>
             {% endfor %}
         {% endif %}
-        
         {% block content %}{% endblock %}
     </div>
 
+    {% if user.is_authenticated %}
+    <button id="chat-btn" onclick="toggleChat()">🔥</button>
+    
+    <div id="chat-window">
+        <div class="chat-header"><span>Asistente IA</span><span style="cursor:pointer" onclick="toggleChat()">✕</span></div>
+        <div class="chat-body" id="chat-body"><div class="msg msg-bot">Hola 👋 Soy la IA de Bienestar Animal.</div></div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="form-control" placeholder="Escribe aquí..." onkeypress="handleEnter(event)">
+            <button class="btn btn-primary" onclick="sendMessage()" style="background-color: #ff4500; border: none;">➤</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            var chat = document.getElementById('chat-window');
+            chat.style.display = chat.style.display === 'none' || chat.style.display === '' ? 'flex' : 'none';
+        }
+        function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
+        function sendMessage() {
+            var input = document.getElementById('chat-input');
+            var msg = input.value.trim();
+            if (!msg) return;
+            addMessage(msg, 'user');
+            input.value = '';
+            
+            fetch(`/api/chatbot/?msg=${encodeURIComponent(msg)}`)
+                .then(r => r.json())
+                .then(d => addMessage(d.respuesta, 'bot'))
+                .catch(e => addMessage(" Error de conexion."));
+        }
+        function addMessage(text, sender) {
+            var body = document.getElementById('chat-body');
+            var div = document.createElement('div');
+            div.className = 'msg ' + (sender === 'user' ? 'msg-user' : 'msg-bot');
+            div.innerText = text;
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
+    </script>
+    {% endif %}
 </body>
 </html>

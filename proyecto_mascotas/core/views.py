@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import JsonResponse
 from .models import Mascota
-from .services import FabricaMascotas, BusquedaIADifusa, SistemaLog
+from .services import FabricaMascotas, BusquedaIADifusa, SistemaLog, ChatbotIA
 
 @login_required
 def lista_mascotas(request):
@@ -20,15 +21,11 @@ def crear_mascota(request):
                 'zona': request.POST['zona']
             }
             FabricaMascotas.crear_mascota(Mascota, datos)
-            
             SistemaLog().registrar_evento(request.user.username, f"Creo mascota {datos['nombre']}")
-            
             messages.success(request, "Mascota reportada exitosamente.")
             return redirect('lista_mascotas')
-            
         except ValueError as e:
             messages.error(request, str(e))
-            
     return render(request, 'form.html')
 
 @login_required
@@ -39,18 +36,13 @@ def buscar_mascota(request):
         estrategia = BusquedaIADifusa()
         todos = Mascota.objects.all()
         resultados = estrategia.buscar(query, todos)
-        
         SistemaLog().registrar_evento(request.user.username, f"Busqueda IA: {query}")
-    
     return render(request, 'busqueda.html', {'resultados': resultados, 'query': query})
 
 @login_required
 def eliminar_mascota(request, id):
     mascota = get_object_or_404(Mascota, id=id)
-    nombre = mascota.nombre
     mascota.delete()
-    
-    SistemaLog().registrar_evento(request.user.username, f"Elimino mascota {nombre}")
     return redirect('lista_mascotas')
 
 @login_required
@@ -61,7 +53,12 @@ def editar_mascota(request, id):
         mascota.descripcion = request.POST['descripcion']
         mascota.zona = request.POST['zona']
         mascota.save()
-        
-        SistemaLog().registrar_evento(request.user.username, f"Edito mascota {mascota.nombre}")
         return redirect('lista_mascotas')
     return render(request, 'form.html', {'mascota': mascota})
+
+def api_chatbot(request):
+    mensaje = request.GET.get('msg', '')
+    if mensaje:
+        respuesta = ChatbotIA.responder(mensaje)
+        return JsonResponse({'respuesta': respuesta})
+    return JsonResponse({'respuesta': 'Error: Mensaje vacioopo'})
